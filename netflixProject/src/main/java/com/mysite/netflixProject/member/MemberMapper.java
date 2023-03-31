@@ -31,6 +31,6 @@ public interface MemberMapper {
 	@Select("select count(*) from member where member_id=#{member_id}")
 	public int idDuplicateCheck(MemberVO vo);
 	
-	@Select("select * member where member_id=#{member_id}")
+	@Select("select * from member where member_id=#{member_id}")
 	public MemberVO selectMember(MemberVO vo);
 }
