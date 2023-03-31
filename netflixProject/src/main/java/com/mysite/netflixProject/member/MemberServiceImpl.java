@@ -26,6 +26,11 @@ public class MemberServiceImpl implements MemberService {
 		int res = mapper.passwordSearch(member);
 		return res; 
 	}
+	@Override
+	public int passwordUpdate(MemberVO member) {
+		int res = mapper.passwordUpdate(member);
+		return res; 
+	}
 	
 	
 

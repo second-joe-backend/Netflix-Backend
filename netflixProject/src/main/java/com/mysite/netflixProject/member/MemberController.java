@@ -34,4 +34,12 @@ public class MemberController {
 		
 		return res;
 	}
+	
+	@RequestMapping("/passwordUpdate")
+	public int passwordUpdate(@RequestBody MemberVO vo) throws Exception{
+		int res = memberService.passwordUpdate(vo);
+		
+		return res;
+	}
+	
 }
