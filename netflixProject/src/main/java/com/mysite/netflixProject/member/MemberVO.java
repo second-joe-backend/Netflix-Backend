@@ -6,6 +6,7 @@ import lombok.Data;
 public class MemberVO {
 	private int member_num;
 	private String member_id;
+	private String member_new_id;
 	private String member_pw;
 	private String member_name;
 	private String member_tel;
