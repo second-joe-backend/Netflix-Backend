@@ -1,7 +1,5 @@
 package com.mysite.netflixProject.board;
 
-import java.sql.Date;
-
 import lombok.Data;
 
 @Data
@@ -11,5 +9,5 @@ public class BoardVO {
 	private String board_pw;
 	private String board_title;
 	private String board_content;
-	private Date board_date;
+	private String board_date;
 }
