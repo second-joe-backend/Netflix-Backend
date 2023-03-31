@@ -41,6 +41,14 @@ public class MemberController {
 		
 		return res;
 	}
+	
+	
+	@RequestMapping("/phoneUpdate")
+	public int phoneUpdate(@RequestBody MemberVO vo) throws Exception{
+		int res = memberService.phoneUpdate(vo);
+		
+		return res;
+	}
 	@RequestMapping("/idDuplicateCheck")
 	public int idDuplicateCheck(MemberVO vo) throws Exception{
 		int res = memberService.idDuplicateCheck(vo);

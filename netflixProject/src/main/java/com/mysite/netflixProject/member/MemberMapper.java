@@ -24,4 +24,7 @@ public interface MemberMapper {
 	
 	@Select("select count(*) member where member_id=#{member_id}")
 	public int idDuplicateCheck(MemberVO vo);
+	
+	@Update("update member set member_id=#{member_id} where member_id=#{member_id}")
+	public int phoneUpdate(MemberVO vo);
 }
