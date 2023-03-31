@@ -2,7 +2,7 @@ package com.mysite.netflixProject.member;
 
 import org.springframework.stereotype.Service;
 
-@Service("memberService")
+@Service
 public class MemberServiceImpl implements MemberService {
 
 	private MemberMapper mapper;
