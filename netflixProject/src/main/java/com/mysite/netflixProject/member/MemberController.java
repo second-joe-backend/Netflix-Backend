@@ -49,6 +49,13 @@ public class MemberController {
 		
 		return res;
 	}
+	
+	@RequestMapping("/emailUpdate")
+	public int emailUpdate(@RequestBody MemberVO vo) throws Exception{
+		int res = memberService.emailUpdate(vo);
+		
+		return res;
+	}
 	@RequestMapping("/idDuplicateCheck")
 	public int idDuplicateCheck(MemberVO vo) throws Exception{
 		int res = memberService.idDuplicateCheck(vo);
