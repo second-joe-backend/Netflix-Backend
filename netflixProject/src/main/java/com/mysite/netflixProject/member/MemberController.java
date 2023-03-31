@@ -23,7 +23,7 @@ public class MemberController {
 
 	
 	@RequestMapping("/insertMember")
-	public int insertmember(@RequestBody MemberVO vo) throws Exception{
+	public int insertmember(MemberVO vo) throws Exception{
 		int res = memberService.insertMember(vo);
 		
 		return res;
@@ -59,13 +59,13 @@ public class MemberController {
 	}
 	
 	@RequestMapping("/selectMember")
-	public MemberVO selectMember(@RequestBody MemberVO vo) throws Exception{
+	public MemberVO selectMember( MemberVO vo) throws Exception{
 		MemberVO selectedMember = memberService.selectMember(vo);
 		
 		return selectedMember;
 	}
 	@RequestMapping("/idDuplicateCheck")
-	public int idDuplicateCheck(MemberVO vo) throws Exception{
+	public int idDuplicateCheck(@RequestBody MemberVO vo) throws Exception{
 		int res = memberService.idDuplicateCheck(vo);
 		
 		return res;
