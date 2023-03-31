@@ -9,5 +9,6 @@ public interface MemberService {
 	public int passwordUpdate(MemberVO vo);
 	public int phoneUpdate(MemberVO vo);
 	public int emailUpdate(MemberVO vo);
+	public MemberVO selectMember(MemberVO vo);
 	public int idDuplicateCheck(MemberVO vo);
 }

@@ -56,11 +56,20 @@ public class MemberController {
 		
 		return res;
 	}
+	
+	@RequestMapping("/selectMember")
+	public MemberVO selectMember(@RequestBody MemberVO vo) throws Exception{
+		MemberVO selectedMember = memberService.selectMember(vo);
+		
+		return selectedMember;
+	}
 	@RequestMapping("/idDuplicateCheck")
-	public int idDuplicateCheck(MemberVO vo) throws Exception{
+	public int idDuplicateCheck(@RequestBody MemberVO vo) throws Exception{
 		int res = memberService.idDuplicateCheck(vo);
 		
 		return res;
 	}
+	
+	
 	
 }

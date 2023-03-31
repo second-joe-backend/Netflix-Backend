@@ -49,6 +49,11 @@ public class MemberServiceImpl implements MemberService {
 		int res = mapper.idDuplicateCheck(member);
 		return res; 
 	}
+	@Override
+	public MemberVO selectMember(MemberVO vo) {
+		MemberVO member = mapper.selectMember(vo);
+		return member;
+	}
 	
 
 }
