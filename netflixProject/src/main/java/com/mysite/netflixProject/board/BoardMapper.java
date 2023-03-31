@@ -10,12 +10,21 @@ import org.apache.ibatis.annotations.Update;
 @Mapper
 public interface BoardMapper {
 	
-	@Select("select member_id, board_title, board_content, "
-			+ "date_format(board_date, '%m월 %d일 %H시') as board_date from customercenter order by board_num desc")
+	@Select("select board_num, member_id, board_title, board_content, "
+			+ "date_format(board_date, '%m월 %d일 %H시') as board_date from customercenter order by board_num asc")
 	public List<BoardVO> getBoardList();
 	
-	@Insert("insert into customercenter (member_id, board_pw, board_title, board_content) values "
-			+ "(#{member_id},#{board_pw},#{board_title},#{board_content})")
+	@Update("set @cnt=0;")
+	public void counterset();
+	
+	@Update("update customercenter"
+			+ " set board_num = (@cnt := @cnt + 1)"
+			+ " where board_num"
+			+ " order by board_date DESC;")
+	public void counterset2();
+	
+	@Insert("insert into customercenter (member_id, board_pw, board_title, board_content, board_num) values "
+			+ "(#{member_id},#{board_pw},#{board_title},#{board_content},1)")
 	public int insertBoard(BoardVO board);
 	
 	@Select("select member_id, board_title, "
