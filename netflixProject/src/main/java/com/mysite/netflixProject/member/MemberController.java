@@ -14,7 +14,7 @@ public class MemberController {
 	}
 	
 	@RequestMapping("/login")
-	public int login(@RequestBody MemberVO vo) throws Exception{
+	public int login( MemberVO vo) throws Exception{
 		int res = memberService.login(vo);
 //		System.out.println("res : "+res);
 		
@@ -30,14 +30,14 @@ public class MemberController {
 	}
 	
 	@RequestMapping("/passwordSearch")
-	public int passwordSearch(@RequestBody MemberVO vo) throws Exception{
+	public int passwordSearch(MemberVO vo) throws Exception{
 		int res = memberService.passwordSearch(vo);
 		
 		return res;
 	}
 	
 	@RequestMapping("/passwordUpdate")
-	public int passwordUpdate(@RequestBody MemberVO vo) throws Exception{
+	public int passwordUpdate(MemberVO vo) throws Exception{
 		int res = memberService.passwordUpdate(vo);
 		
 		return res;
@@ -45,14 +45,14 @@ public class MemberController {
 	
 	
 	@RequestMapping("/phoneUpdate")
-	public int phoneUpdate(@RequestBody MemberVO vo) throws Exception{
+	public int phoneUpdate(MemberVO vo) throws Exception{
 		int res = memberService.phoneUpdate(vo);
 		
 		return res;
 	}
 	
 	@RequestMapping("/emailUpdate")
-	public int emailUpdate(@RequestBody MemberVO vo) throws Exception{
+	public int emailUpdate( MemberVO vo) throws Exception{
 		int res = memberService.emailUpdate(vo);
 		
 		return res;
@@ -65,7 +65,7 @@ public class MemberController {
 		return selectedMember;
 	}
 	@RequestMapping("/idDuplicateCheck")
-	public int idDuplicateCheck(@RequestBody MemberVO vo) throws Exception{
+	public int idDuplicateCheck( MemberVO vo) throws Exception{
 		int res = memberService.idDuplicateCheck(vo);
 		
 		return res;
