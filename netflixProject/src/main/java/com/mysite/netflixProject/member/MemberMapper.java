@@ -4,7 +4,7 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Mapper
@@ -28,7 +28,7 @@ public interface MemberMapper {
 	@Update("update member set member_tel=#{member_tel} where member_id=#{member_id}")
 	public int phoneUpdate(MemberVO vo);
 	
-	@Select("select count(*) member where member_id=#{member_id}")
+	@Select("select count(*) from member where member_id=#{member_id}")
 	public int idDuplicateCheck(MemberVO vo);
 	
 	@Select("select * member where member_id=#{member_id}")

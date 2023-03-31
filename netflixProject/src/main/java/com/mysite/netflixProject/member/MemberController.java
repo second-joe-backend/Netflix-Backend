@@ -4,6 +4,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+
 @RestController
 public class MemberController {
 	private MemberService memberService;
@@ -64,7 +65,7 @@ public class MemberController {
 		return selectedMember;
 	}
 	@RequestMapping("/idDuplicateCheck")
-	public int idDuplicateCheck(@RequestBody MemberVO vo) throws Exception{
+	public int idDuplicateCheck(MemberVO vo) throws Exception{
 		int res = memberService.idDuplicateCheck(vo);
 		
 		return res;
