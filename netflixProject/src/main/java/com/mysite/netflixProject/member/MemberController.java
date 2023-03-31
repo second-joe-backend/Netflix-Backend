@@ -19,14 +19,7 @@ public class MemberController {
 		
 		return res;
 	}
-	
-	@RequestMapping("/login")
-	public int ah(@RequestBody MemberVO vo) throws Exception{
-		int res = memberService.login(vo);
-//		System.out.println("res : "+res);
-		
-		return res;
-	}
+
 	
 	@RequestMapping("/insertMember")
 	public int insertmember(@RequestBody MemberVO vo) throws Exception{
