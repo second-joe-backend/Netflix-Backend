@@ -7,4 +7,5 @@ public interface MemberService {
 	public int insertMember(MemberVO member);
 	public int passwordSearch(MemberVO member);
 	public int passwordUpdate(MemberVO vo);
+	public int idDuplicateCheck(MemberVO vo);
 }

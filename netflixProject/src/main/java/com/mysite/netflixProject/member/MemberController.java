@@ -41,5 +41,11 @@ public class MemberController {
 		
 		return res;
 	}
+	@RequestMapping("/idDuplicateCheck")
+	public int idDuplicateCheck(MemberVO vo) throws Exception{
+		int res = memberService.idDuplicateCheck(vo);
+		
+		return res;
+	}
 	
 }
