@@ -11,7 +11,7 @@ import org.apache.ibatis.annotations.Update;
 public interface BoardMapper {
 	
 	@Select("select member_id, board_title, board_content, "
-			+ "date_format(board_date, '%y-%m-%d') as board_date from customercenter order by board_num desc")
+			+ "date_format(board_date, '%m-%d-%h') as board_date from customercenter order by board_num desc")
 	public List<BoardVO> getBoardList();
 	
 	@Insert("insert into customercenter (member_id, board_pw, board_title, board_content) values "
