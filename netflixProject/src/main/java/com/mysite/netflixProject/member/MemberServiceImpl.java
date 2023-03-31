@@ -22,9 +22,9 @@ public class MemberServiceImpl implements MemberService {
 		return res; // 삽입한 행수를 반환
 	}
 	@Override
-	public MemberVO passwordSearch(MemberVO member) {
-		MemberVO vo = mapper.passwordSearch(member);
-		return vo; // 삽입한 행수를 반환
+	public int passwordSearch(MemberVO member) {
+		int res = mapper.passwordSearch(member);
+		return res; 
 	}
 	
 	
