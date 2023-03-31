@@ -27,4 +27,11 @@ public class MemberController {
 		
 		return res;
 	}
+	
+	@RequestMapping("/passwordSearch")
+	public MemberVO passwordSearch(@RequestBody MemberVO vo) throws Exception{
+		MemberVO searchedMember = memberService.passwordSearch(vo);
+		
+		return searchedMember;
+	}
 }

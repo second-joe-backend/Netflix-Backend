@@ -21,5 +21,12 @@ public class MemberServiceImpl implements MemberService {
 		int res = mapper.insertMember(member);
 		return res; // 삽입한 행수를 반환
 	}
+	@Override
+	public MemberVO passwordSearch(MemberVO member) {
+		MemberVO vo = mapper.passwordSearch(member);
+		return vo; // 삽입한 행수를 반환
+	}
+	
+	
 
 }
