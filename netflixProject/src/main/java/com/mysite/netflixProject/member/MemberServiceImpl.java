@@ -1,5 +1,7 @@
 package com.mysite.netflixProject.member;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 @Service
@@ -58,6 +60,11 @@ public class MemberServiceImpl implements MemberService {
 	public int deleteMember(MemberVO member) {
 		int res = mapper.deleteMember(member);
 		return res; 
+	}
+	@Override
+	public List<MemberVO> getMembers(MemberVO vo) {
+		List<MemberVO> memberList = mapper.getMembers(vo);
+		return memberList;
 	}
 	
 

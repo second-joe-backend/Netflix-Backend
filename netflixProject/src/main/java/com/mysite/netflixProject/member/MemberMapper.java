@@ -1,5 +1,7 @@
 package com.mysite.netflixProject.member;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
@@ -9,6 +11,9 @@ import org.apache.ibatis.annotations.Update;
 
 @Mapper
 public interface MemberMapper {
+	@Select("select * from member order by member_num")
+	public List<MemberVO> getMembers(MemberVO member);
+	
 	@Select("select count(*) from member where member_id=#{member_id} and member_pw=#{member_pw}")
 	public int login(MemberVO member);
 	

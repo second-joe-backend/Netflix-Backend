@@ -1,8 +1,10 @@
 package com.mysite.netflixProject.member;
 
+import java.util.List;
 
 public interface MemberService {
 	public int login(MemberVO member);
+	public List<MemberVO> getMembers(MemberVO vo);
 	public int insertMember(MemberVO member);
 	public int passwordSearch(MemberVO member);
 	public int passwordUpdate(MemberVO vo);
