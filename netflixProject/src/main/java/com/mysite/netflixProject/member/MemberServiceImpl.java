@@ -21,6 +21,8 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public int insertMember(MemberVO member) {
 		int res = mapper.insertMember(member);
+		mapper.counterset();
+		mapper.counterset2();
 		return res; // 삽입한 행수를 반환
 	}
 	@Override
@@ -59,6 +61,8 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public int deleteMember(MemberVO member) {
 		int res = mapper.deleteMember(member);
+		mapper.counterset();
+		mapper.counterset2();
 		return res; 
 	}
 	@Override
