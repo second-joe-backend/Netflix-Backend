@@ -35,6 +35,6 @@ public interface BoardMapper {
 			+ " where board_num=#{board_num}")
 	public int modifyBoard(BoardVO board);
 	
-	@Delete("delete from customercenter where board_num = #{board_num}")
+	@Delete("delete from customercenter where board_num=#{board_num}")
 	public int deleteBoard(BoardVO board);
 }

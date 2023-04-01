@@ -42,7 +42,7 @@ public class BoardController {
 	}
 
 	@RequestMapping("/delete")
-	public int deleteBoard(@RequestBody BoardVO board) {
+	public int deleteBoard(BoardVO board) {
 		int res = impl.deleteBoard(board);
 		return res;
 	}
