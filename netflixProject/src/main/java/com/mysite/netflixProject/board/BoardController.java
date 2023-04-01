@@ -2,6 +2,7 @@ package com.mysite.netflixProject.board;
 
 import java.util.List;
 
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,7 +24,7 @@ public class BoardController {
 	}
 
 	@RequestMapping("/insert")
-	public int insertBoard(BoardVO board) {
+	public int insertBoard(@RequestBody BoardVO board) {
 		int res = impl.insertBoard(board);
 		return res;
 	}
@@ -35,13 +36,13 @@ public class BoardController {
 	}
 
 	@RequestMapping("/modify")
-	public int modifyBoard(BoardVO board) {
+	public int modifyBoard(@RequestBody BoardVO board) {
 		int res = impl.modifyBoard(board);
 		return res;
 	}
 
 	@RequestMapping("/delete")
-	public int deleteBoard(BoardVO board) {
+	public int deleteBoard(@RequestBody BoardVO board) {
 		int res = impl.deleteBoard(board);
 		return res;
 	}

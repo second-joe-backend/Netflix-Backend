@@ -31,8 +31,8 @@ public interface BoardMapper {
 			+ "board_content from customercenter where board_num = #{board_num}")
 	public BoardVO getDetail(BoardVO board);
 	
-	@Update("update customercenter set board_title=#{board_title}, board_content=#{board_content}, "
-			+ "board_date=now() where board_num=#{board_num}")
+	@Update("update customercenter set board_title=#{board_title}, board_content=#{board_content} "
+			+ " where board_num=#{board_num}")
 	public int modifyBoard(BoardVO board);
 	
 	@Delete("delete from customercenter where board_num = #{board_num}")
