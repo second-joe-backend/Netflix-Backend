@@ -1,10 +1,10 @@
 package com.mysite.netflixProject.member;
 
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 
 @Mapper
@@ -33,4 +33,7 @@ public interface MemberMapper {
 	
 	@Select("select * from member where member_id=#{member_id}")
 	public MemberVO selectMember(MemberVO vo);
+	
+	@Delete("delete from member where member_id=#{member_id}")
+	public int deleteMember(MemberVO vo);
 }

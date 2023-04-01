@@ -39,7 +39,7 @@ public class MemberController {
 	@RequestMapping("/passwordUpdate")
 	public int passwordUpdate(@RequestBody MemberVO vo) throws Exception{
 		int res = memberService.passwordUpdate(vo);
-		
+		System.out.println("res : "+res);
 		return res;
 	}
 	
@@ -47,14 +47,14 @@ public class MemberController {
 	@RequestMapping("/phoneUpdate")
 	public int phoneUpdate(@RequestBody MemberVO vo) throws Exception{
 		int res = memberService.phoneUpdate(vo);
-		
+//		System.out.println("res : "+res);
 		return res;
 	}
 	
 	@RequestMapping("/emailUpdate")
 	public int emailUpdate(@RequestBody MemberVO vo) throws Exception{
 		int res = memberService.emailUpdate(vo);
-		
+//		System.out.println("res : "+res);
 		return res;
 	}
 	
@@ -67,10 +67,16 @@ public class MemberController {
 	@RequestMapping("/idDuplicateCheck")
 	public int idDuplicateCheck(@RequestBody MemberVO vo) throws Exception{
 		int res = memberService.idDuplicateCheck(vo);
-		System.out.println("res : "+res);
+//		System.out.println("res : "+res);
 		return res;
 	}
 	
+	@RequestMapping("/deleteMember")
+	public int deleteMember(@RequestBody MemberVO vo) throws Exception{
+		int res = memberService.deleteMember(vo);
+//		System.out.println("res : "+res);
+		return res;
+	}
 	
 	
 }

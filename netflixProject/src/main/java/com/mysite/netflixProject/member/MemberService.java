@@ -1,6 +1,5 @@
 package com.mysite.netflixProject.member;
 
-import org.springframework.web.bind.annotation.RequestBody;
 
 public interface MemberService {
 	public int login(MemberVO member);
@@ -11,4 +10,5 @@ public interface MemberService {
 	public int emailUpdate(MemberVO vo);
 	public MemberVO selectMember(MemberVO vo);
 	public int idDuplicateCheck(MemberVO vo);
+	public int deleteMember(MemberVO vo);
 }
