@@ -44,7 +44,7 @@ public interface MemberMapper {
 	@Update("update member"
 			+ " set member_num = (@cnt := @cnt + 1)"
 			+ " where member_num"
-			+ " order by member_num DESC;")
+			+ " order by signup_date DESC;")
 	public void counterset2();
 	
 }
