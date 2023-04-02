@@ -12,7 +12,11 @@
 	<artifactId>netflixProject</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>netflixProject</name>
+<<<<<<< HEAD
+	<description>netflixProject Mybatis test</description>
+=======
 	<description>netflixProject</description>
+>>>>>>> branch 'dev' of https://github.com/second-joe-backend/Netflix-Backend.git
 	<properties>
 		<java.version>17</java.version>
 	</properties>
