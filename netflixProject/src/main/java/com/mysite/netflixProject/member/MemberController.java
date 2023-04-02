@@ -1,5 +1,6 @@
 package com.mysite.netflixProject.member;
 
+import org.apache.ibatis.annotations.Update;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -77,6 +78,6 @@ public class MemberController {
 //		System.out.println("res : "+res);
 		return res;
 	}
-	
+
 	
 }

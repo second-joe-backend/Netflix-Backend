@@ -37,6 +37,7 @@ public interface MemberMapper {
 	@Delete("delete from member where member_id=#{member_id}")
 	public int deleteMember(MemberVO vo);
 	
+
 	@Update("set @cnt=0;")
 	public void counterset1();
 	
@@ -45,4 +46,5 @@ public interface MemberMapper {
 			+ " where member_num"
 			+ " order by signup_date DESC;")
 	public void counterset2();
+
 }

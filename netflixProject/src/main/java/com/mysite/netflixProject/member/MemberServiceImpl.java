@@ -21,7 +21,9 @@ public class MemberServiceImpl implements MemberService {
 		int res = mapper.insertMember(member);
 		mapper.counterset1();
 		mapper.counterset2();
+
 		return res; 
+
 	}
 	@Override
 	public int passwordSearch(MemberVO member) {
