@@ -23,8 +23,8 @@ public interface BoardMapper {
 			+ " order by board_date DESC;")
 	public void counterset2();
 	
-	@Insert("insert into customercenter (member_id, board_pw, board_title, board_content, board_num) values "
-			+ "(#{member_id},#{board_pw},#{board_title},#{board_content},1)")
+	@Insert("insert into customercenter (member_id, board_title, board_content, board_num) values "
+			+ "(#{member_id},#{board_title},#{board_content},1)")
 	public int insertBoard(BoardVO board);
 	
 	@Select("select member_id, board_title, "
