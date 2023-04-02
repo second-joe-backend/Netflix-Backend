@@ -1,5 +1,7 @@
 package com.mysite.netflixProject.member;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
@@ -46,5 +48,8 @@ public interface MemberMapper {
 			+ " where member_num"
 			+ " order by signup_date DESC;")
 	public void counterset2();
+	
+	@Select("select * from member")
+	public List<MemberVO> getMembers();
 
 }

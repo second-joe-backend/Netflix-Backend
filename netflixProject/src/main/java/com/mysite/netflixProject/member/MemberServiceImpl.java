@@ -1,5 +1,7 @@
 package com.mysite.netflixProject.member;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 @Service
@@ -64,6 +66,11 @@ public class MemberServiceImpl implements MemberService {
 		mapper.counterset();
 		mapper.counterset2();
 		return res; 
+	}
+	
+	public List<MemberVO> getMembers(){
+		List<MemberVO> memberList = mapper.getMembers();
+		return memberList;
 	}
 	
 

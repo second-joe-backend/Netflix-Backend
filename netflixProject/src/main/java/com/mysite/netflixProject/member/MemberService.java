@@ -1,5 +1,6 @@
 package com.mysite.netflixProject.member;
 
+import java.util.List;
 
 public interface MemberService {
 	public int login(MemberVO member);
@@ -11,4 +12,5 @@ public interface MemberService {
 	public MemberVO selectMember(MemberVO vo);
 	public int idDuplicateCheck(MemberVO vo);
 	public int deleteMember(MemberVO vo);
+	public List<MemberVO> getMembers();
 }
