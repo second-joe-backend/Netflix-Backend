@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
+import org.springframework.web.bind.annotation.RequestBody;
 
 
 @Mapper
@@ -53,5 +54,9 @@ public interface MemberMapper {
 			+ "date_format(signup_date, '%y/%m/%d') as signup_date from member order by member_num desc")
 //	@Select("select * from member")
 	public List<MemberVO> getMembers();
+	
+	@Update("update member set member_id=#{member_id}, member_pw=#{member_pw}, member_name=#{member_name}, member_tel=#{member_tel},"
+			+"member_addr=#{member_addr}, pw_question=#{pw_question}, pw_answer=#{pw_answer} where member_id=#{member_id}")
+	public int updateMembers(MemberVO vo);
 
 }

@@ -72,6 +72,11 @@ public class MemberServiceImpl implements MemberService {
 		List<MemberVO> memberList = mapper.getMembers();
 		return memberList;
 	}
+	@Override
+	public int updateMembers(MemberVO member) {
+		int res = mapper.updateMembers(member);
+		return res; 
+	}
 	
 
 }

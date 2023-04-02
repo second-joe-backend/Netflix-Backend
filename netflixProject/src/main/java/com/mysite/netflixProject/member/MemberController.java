@@ -85,6 +85,13 @@ public class MemberController {
 		List<MemberVO> memberList = memberService.getMembers();
 		return memberList;
 	}
+	
+	@RequestMapping("/updateMembers")
+	public int updateMembers(@RequestBody MemberVO vo) throws Exception{
+		int res = memberService.updateMembers(vo);
+
+		return res;
+	}
 
 	
 }

@@ -13,4 +13,5 @@ public interface MemberService {
 	public int idDuplicateCheck(MemberVO vo);
 	public int deleteMember(MemberVO vo);
 	public List<MemberVO> getMembers();
+	public int updateMembers(MemberVO vo);
 }
