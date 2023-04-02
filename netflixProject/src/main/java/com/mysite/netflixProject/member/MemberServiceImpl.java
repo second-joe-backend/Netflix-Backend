@@ -13,13 +13,15 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public int login(MemberVO member) {
 		int res = mapper.login(member);
-		return res; // id와 pw가 일치하는 행수를 반환
+		return res; 
 	}
 
 	@Override
 	public int insertMember(MemberVO member) {
 		int res = mapper.insertMember(member);
-		return res; // 삽입한 행수를 반환
+		mapper.counterset1();
+		mapper.counterset2();
+		return res; 
 	}
 	@Override
 	public int passwordSearch(MemberVO member) {
@@ -57,6 +59,8 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public int deleteMember(MemberVO member) {
 		int res = mapper.deleteMember(member);
+		mapper.counterset1();
+		mapper.counterset2();
 		return res; 
 	}
 	
