@@ -49,7 +49,9 @@ public interface MemberMapper {
 			+ " order by signup_date DESC;")
 	public void counterset2();
 	
-	@Select("select * from member")
+	@Select("select member_num, member_id, member_pw, member_name, member_tel, member_addr, pw_question, pw_answer, "
+			+ "date_format(signup_date, '%y/%m/%d') as signup_date from member order by member_num desc")
+//	@Select("select * from member")
 	public List<MemberVO> getMembers();
 
 }
