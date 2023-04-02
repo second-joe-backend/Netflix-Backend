@@ -1,5 +1,4 @@
-package com.mysite.netflixProject;
-
+package com.mysite.netflixProject.board;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
@@ -13,5 +12,4 @@ public class WebConfig implements WebMvcConfigurer {
 		registry.addMapping("/**")
 			.allowedOrigins("*");
 	}
-
 }
