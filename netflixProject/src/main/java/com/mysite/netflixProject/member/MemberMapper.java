@@ -38,7 +38,7 @@ public interface MemberMapper {
 	public int deleteMember(MemberVO vo);
 	
 	@Update("set @cnt=0;")
-	public void counterset1();
+	public void counterset();
 	
 	@Update("update member"
 			+ " set member_num = (@cnt := @cnt + 1)"

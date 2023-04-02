@@ -19,7 +19,7 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public int insertMember(MemberVO member) {
 		int res = mapper.insertMember(member);
-		mapper.counterset1();
+		mapper.counterset();
 		mapper.counterset2();
 		return res; 
 	}
@@ -59,7 +59,7 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public int deleteMember(MemberVO member) {
 		int res = mapper.deleteMember(member);
-		mapper.counterset1();
+		mapper.counterset();
 		mapper.counterset2();
 		return res; 
 	}
