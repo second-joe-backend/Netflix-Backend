@@ -28,5 +28,8 @@ public interface FavMovieMapper {
 	
 	@Delete("delete from fav_movie where member_id=#{member_id}")
 	public int removeMember(FavMovieVO favmovieVO);
+	
+	@Select("select count(*) from fav_movie where member_id=#{member_id} and movie_title=#{movie_title}")
+	public int isDuplicateTitle(FavMovieVO favmovieVO);
 
 }

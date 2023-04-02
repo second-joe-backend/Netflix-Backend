@@ -16,4 +16,6 @@ public interface FavMovieService {
 	public int removeMember(FavMovieVO favmovieVO);
 	
 	public List<FavMovieVO> chkLike(FavMovieVO favmovieVO);
+	
+	public int isDuplicateTitle(FavMovieVO favmovieVO);
 }

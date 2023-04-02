@@ -42,5 +42,10 @@ public class FavMovieServiceImpl implements FavMovieService {
 		int res = mapper.removeMember(favmovieVO);
 		return res;
 	}
+	@Override
+	public int isDuplicateTitle(FavMovieVO favmovieVO) {
+		int res = mapper.isDuplicateTitle(favmovieVO);
+		return res;
+	}
 
 }

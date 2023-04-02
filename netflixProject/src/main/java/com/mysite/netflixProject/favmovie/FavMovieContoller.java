@@ -50,5 +50,12 @@ public class FavMovieContoller {
 		favmovie_list = favMovieService.getFavMovielist(favmovieVO);
 		return favmovie_list;
 	}
+	
+	@RequestMapping("/isDuplicateTitle")
+	public int isDuplicateTitle(@RequestBody FavMovieVO favmovieVO) {
+		int res = favMovieService.isDuplicateTitle(favmovieVO);
+		
+		return res;
+	}
 
 }
