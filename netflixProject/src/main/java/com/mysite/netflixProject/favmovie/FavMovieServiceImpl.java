@@ -37,5 +37,10 @@ public class FavMovieServiceImpl implements FavMovieService {
 		favmovie_list = mapper.getFavMovielist(favmovieVO);
 		return favmovie_list;
 	}
+	@Override
+	public int removeMember(FavMovieVO favmovieVO) {
+		int res = mapper.removeMember(favmovieVO);
+		return res;
+	}
 
 }

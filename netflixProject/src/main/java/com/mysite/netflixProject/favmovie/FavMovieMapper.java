@@ -25,5 +25,8 @@ public interface FavMovieMapper {
 	
 	@Delete("delete from fav_movie where movie_title = #{movie_title} and member_id=#{member_id}")
 	public int deleteFavMovie(FavMovieVO favmovieVO);
+	
+	@Delete("delete from fav_movie where member_id=#{member_id}")
+	public int removeMember(FavMovieVO favmovieVO);
 
 }

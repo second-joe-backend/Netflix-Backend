@@ -13,5 +13,7 @@ public interface FavMovieService {
 	
 	public int deleteFavMovie(FavMovieVO favmovieVO);
 	
+	public int removeMember(FavMovieVO favmovieVO);
+	
 	public List<FavMovieVO> chkLike(FavMovieVO favmovieVO);
 }

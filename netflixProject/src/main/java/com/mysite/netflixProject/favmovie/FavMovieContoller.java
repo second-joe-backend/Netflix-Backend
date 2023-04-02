@@ -31,6 +31,12 @@ public class FavMovieContoller {
 		return res;
 	}
 	
+	@RequestMapping("/remove")
+	public int removeMember(@RequestBody FavMovieVO favmovieVO) throws Exception{
+		int res = favMovieService.removeMember(favmovieVO);
+		return res;
+	}
+	
 	@RequestMapping("/chk")
 	public List<FavMovieVO> chkLike(@RequestBody FavMovieVO favmovieVO) {
 		List<FavMovieVO> res = favMovieService.chkLike(favmovieVO);
