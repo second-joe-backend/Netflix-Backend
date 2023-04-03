@@ -32,7 +32,7 @@ public interface ProfileMapper {
 	
 	@Update("update profile"
 			+ " set profile_id = (@cnt := @cnt + 1)"
-			+ " where profile_id"
+			+ " where member_id=#{member_id}"
 			+ " order by profile_date asc;")
-	public void counterset2();
+	public void counterset2(@Param("member_id")String member_id);
 }

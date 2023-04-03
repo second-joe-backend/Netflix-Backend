@@ -29,7 +29,7 @@ public class ProfileServiceImpl implements ProfileService {
 	    }
 	    mapper.insertNickname(member_id, 1, nickname);
 	    mapper.counterset();
-		mapper.counterset2();
+		mapper.counterset2(member_id);
 	}
 
 	@Override
@@ -42,7 +42,7 @@ public class ProfileServiceImpl implements ProfileService {
 	public int deleteNickname(String member_id, int profile_id) {
 	    int res = mapper.deleteNickname(member_id, profile_id);
 	    mapper.counterset();
-		mapper.counterset2();
+	    mapper.counterset2(member_id);
 		return res;
 	}
 
