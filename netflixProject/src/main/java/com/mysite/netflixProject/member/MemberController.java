@@ -1,6 +1,7 @@
 package com.mysite.netflixProject.member;
 
-import org.apache.ibatis.annotations.Update;
+import java.util.List;
+
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -76,6 +77,19 @@ public class MemberController {
 	public int deleteMember(@RequestBody MemberVO vo) throws Exception{
 		int res = memberService.deleteMember(vo);
 //		System.out.println("res : "+res);
+		return res;
+	}
+	
+	@RequestMapping("/getMembers")
+	public List<MemberVO> getMembers(@RequestBody MemberVO vo) throws Exception{
+		List<MemberVO> memberList = memberService.getMembers();
+		return memberList;
+	}
+	
+	@RequestMapping("/updateMembers")
+	public int updateMembers(@RequestBody MemberVO vo) throws Exception{
+		int res = memberService.updateMembers(vo);
+
 		return res;
 	}
 

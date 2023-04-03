@@ -1,10 +1,13 @@
 package com.mysite.netflixProject.member;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
+import org.springframework.web.bind.annotation.RequestBody;
 
 
 @Mapper
@@ -12,8 +15,8 @@ public interface MemberMapper {
 	@Select("select count(*) from member where member_id=#{member_id} and member_pw=#{member_pw}")
 	public int login(MemberVO member);
 	
-	@Insert("insert into member (member_id, member_pw, member_name, member_tel, member_addr, pw_question, pw_answer) "
-			+ "values (#{member_id}, #{member_pw}, #{member_name}, #{member_tel}, #{member_addr}, #{pw_question}, #{pw_answer})")
+	@Insert("insert into member (member_num, member_id, member_pw, member_name, member_tel, member_addr, pw_question, pw_answer) "
+			+ "values (1, #{member_id}, #{member_pw}, #{member_name}, #{member_tel}, #{member_addr}, #{pw_question}, #{pw_answer})")
 	public int insertMember(MemberVO member);
 	
 	@Select("select count(*) from member where member_id=#{member_id} and pw_question=#{pw_question} and pw_answer=#{pw_answer}")
@@ -37,9 +40,9 @@ public interface MemberMapper {
 	@Delete("delete from member where member_id=#{member_id}")
 	public int deleteMember(MemberVO vo);
 	
-	
+
 	@Update("set @cnt=0;")
-	public void counterset1();
+	public void counterset();
 	
 	@Update("update member"
 			+ " set member_num = (@cnt := @cnt + 1)"
@@ -47,4 +50,13 @@ public interface MemberMapper {
 			+ " order by signup_date DESC;")
 	public void counterset2();
 	
+	@Select("select member_num, member_id, member_pw, member_name, member_tel, member_addr, pw_question, pw_answer, "
+			+ "date_format(signup_date, '%y/%m/%d') as signup_date from member order by member_num desc")
+//	@Select("select * from member")
+	public List<MemberVO> getMembers();
+	
+	@Update("update member set member_pw=#{member_pw}, member_name=#{member_name}, member_tel=#{member_tel},"
+			+"member_addr=#{member_addr}, pw_question=#{pw_question}, pw_answer=#{pw_answer} where member_id=#{member_id}")
+	public int updateMembers(MemberVO vo);
+
 }

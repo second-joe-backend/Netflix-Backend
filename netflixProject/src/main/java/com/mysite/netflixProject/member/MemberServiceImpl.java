@@ -1,5 +1,7 @@
 package com.mysite.netflixProject.member;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 @Service
@@ -13,15 +15,17 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public int login(MemberVO member) {
 		int res = mapper.login(member);
-		return res; // id와 pw가 일치하는 행수를 반환
+		return res; 
 	}
 
 	@Override
 	public int insertMember(MemberVO member) {
 		int res = mapper.insertMember(member);
-		mapper.counterset1();
+		mapper.counterset();
 		mapper.counterset2();
-		return res; // 삽입한 행수를 반환
+
+		return res; 
+
 	}
 	@Override
 	public int passwordSearch(MemberVO member) {
@@ -59,8 +63,18 @@ public class MemberServiceImpl implements MemberService {
 	@Override
 	public int deleteMember(MemberVO member) {
 		int res = mapper.deleteMember(member);
-		mapper.counterset1();
+		mapper.counterset();
 		mapper.counterset2();
+		return res; 
+	}
+	
+	public List<MemberVO> getMembers(){
+		List<MemberVO> memberList = mapper.getMembers();
+		return memberList;
+	}
+	@Override
+	public int updateMembers(MemberVO member) {
+		int res = mapper.updateMembers(member);
 		return res; 
 	}
 	
