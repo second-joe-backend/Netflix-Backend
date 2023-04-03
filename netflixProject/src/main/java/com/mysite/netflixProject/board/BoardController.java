@@ -46,7 +46,10 @@ public class BoardController {
 		int res = impl.deleteBoard(board);
 		return res;
 	}
-	
-	
+	@RequestMapping("/reply")
+	public int replyBoard(@RequestBody BoardVO board) {
+		int res = impl.replyBoard(board);
+		return res;
+	}
 
 }

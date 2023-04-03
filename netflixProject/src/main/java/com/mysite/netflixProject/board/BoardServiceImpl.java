@@ -47,6 +47,12 @@ public class BoardServiceImpl implements BoardService{
 		mapper.counterset2();
 		return res;
 	}
+	
+	@Override
+	public int replyBoard(BoardVO board) {
+		int res = mapper.replyBoard(board);
+		return res;
+	}
 
 
 }

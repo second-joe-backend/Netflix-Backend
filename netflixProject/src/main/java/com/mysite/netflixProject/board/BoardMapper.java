@@ -28,7 +28,7 @@ public interface BoardMapper {
 	public int insertBoard(BoardVO board);
 	
 	@Select("select member_id, board_title, "
-			+ "board_content from customercenter where board_num = #{board_num}")
+			+ "board_content,board_reply from customercenter where board_num = #{board_num}")
 	public BoardVO getDetail(BoardVO board);
 	
 	@Update("update customercenter set board_title=#{board_title}, board_content=#{board_content} "
@@ -37,4 +37,7 @@ public interface BoardMapper {
 	
 	@Delete("delete from customercenter where board_num=#{board_num}")
 	public int deleteBoard(BoardVO board);
+	
+	@Update("update customercenter set board_reply=#{board_reply} where board_num = #{board_num}")
+	public int replyBoard(BoardVO board);
 }
