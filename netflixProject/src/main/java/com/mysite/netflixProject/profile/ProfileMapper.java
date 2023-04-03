@@ -15,7 +15,7 @@ public interface ProfileMapper {
 	@Select("SELECT member_id, profile_id, nickname FROM profile WHERE member_id = #{member_id}")
     public List<ProfileVO> getNicknames(@Param("member_id") String member_id);
 	
-	@Insert("INSERT INTO profile (member_id, profile_id, nickname) VALUES (#{member_id}, #{profile_id}, #{nickname})")
+	@Insert("INSERT INTO profile (member_id, profile_id, nickname) VALUES (#{member_id}, 1, #{nickname})")
     public int insertNickname(@Param("member_id") String member_id, @Param("profile_id") int profile_id, @Param("nickname") String nickname);
 	
 	@Select("SELECT IFNULL(MAX(profile_id), 0) + 1 FROM profile WHERE member_id = #{member_id}")
@@ -27,4 +27,12 @@ public interface ProfileMapper {
 	@Delete("DELETE FROM profile WHERE member_id = #{member_id} AND profile_id = #{profile_id}")
 	public int deleteNickname(@Param("member_id") String member_id, @Param("profile_id") int profile_id);
 
+	@Update("set @cnt=0;")
+	public void counterset();
+	
+	@Update("update profile"
+			+ " set profile_id = (@cnt := @cnt + 1)"
+			+ " where profile_id"
+			+ " order by profile_date asc;")
+	public void counterset2();
 }

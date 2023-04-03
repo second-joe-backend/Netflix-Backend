@@ -7,4 +7,5 @@ public class ProfileVO {
 	 private String member_id;
 	 private int profile_id;
 	 private String nickname;
+	 private String profile_date;
 }

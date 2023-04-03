@@ -22,12 +22,14 @@ public class ProfileServiceImpl implements ProfileService {
 	@Override
 	public void insertNickname(String member_id, String nickname) {
 	    int profileId = mapper.getNextProfileId(member_id);
-
-	    if (profileId <= 4) {
-	        mapper.insertNickname(member_id, profileId, nickname);
-	    } else {
+	    
+		
+	    if (profileId > 4) {   
 	        throw new IllegalStateException("최대 4개까지 등록가능");
 	    }
+	    mapper.insertNickname(member_id, 1, nickname);
+	    mapper.counterset();
+		mapper.counterset2();
 	}
 
 	@Override
@@ -39,6 +41,8 @@ public class ProfileServiceImpl implements ProfileService {
 	@Override
 	public int deleteNickname(String member_id, int profile_id) {
 	    int res = mapper.deleteNickname(member_id, profile_id);
+	    mapper.counterset();
+		mapper.counterset2();
 		return res;
 	}
 
