@@ -14,11 +14,16 @@ public class ProfileServiceImpl implements ProfileService {
     }
 	
 	@Override
-	public List<ProfileVO> getNicknames(String member_id) {
-		List<ProfileVO> profilelist = mapper.getNicknames(member_id);
+	public List<ProfileVO> getNicknames(ProfileVO vo) {
+		List<ProfileVO> profilelist = mapper.getNicknames(vo);
 		return profilelist;
 	}
 	
+	@Override
+	public ProfileVO getProfileDetail(ProfileVO vo) {
+		ProfileVO profile = mapper.getProfileDetail(vo);
+		return profile;
+	}
 	@Override
 	public void insertNickname(String member_id, String nickname) {
 	    int profileId = mapper.getNextProfileId(member_id);
@@ -45,6 +50,8 @@ public class ProfileServiceImpl implements ProfileService {
 	    mapper.counterset2(member_id);
 		return res;
 	}
+
+	
 
 
 }

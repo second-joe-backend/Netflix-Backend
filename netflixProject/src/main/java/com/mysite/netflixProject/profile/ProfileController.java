@@ -20,9 +20,15 @@ public class ProfileController {
     }
 
     @RequestMapping("/profiles")
-    public List<ProfileVO> getNicknames(@RequestParam String member_id) {
-        List<ProfileVO> profilelist = profileService.getNicknames(member_id);
+    public List<ProfileVO> getNicknames(@RequestBody ProfileVO vo) throws Exception {
+        List<ProfileVO> profilelist = profileService.getNicknames(vo);
         return profilelist;
+    }
+    
+    @RequestMapping("/profileDetail")
+    public ProfileVO getProfileDetail(@RequestBody ProfileVO vo) throws Exception {
+        ProfileVO profileDetail = profileService.getProfileDetail(vo);
+        return profileDetail;
     }
     
 
