@@ -11,7 +11,7 @@ import org.apache.ibatis.annotations.Update;
 public interface BoardMapper {
 	
 	@Select("select board_num, member_id, board_title, board_content, "
-			+ "date_format(board_date, '%m월 %d일 %H시') as board_date from customercenter order by board_num asc")
+			+ "date_format(board_date, '%m월 %d일 %H시') as board_date, board_reply from customercenter order by board_num asc")
 	public List<BoardVO> getBoardList();
 	
 	@Update("set @cnt=0;")
