@@ -25,6 +25,8 @@ public class ProfileController {
         return profilelist;
     }
     
+
+    
     @RequestMapping("/insertprofiles")
     public ResponseEntity<Void> insertNickname(@RequestBody Map<String, String> payload) {
         String member_id = payload.get("member_id");
