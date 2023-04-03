@@ -24,6 +24,12 @@ public class ProfileServiceImpl implements ProfileService {
 		ProfileVO profile = mapper.getProfileDetail(vo);
 		return profile;
 	}
+	
+	@Override
+	public int profileEmailUpdate(ProfileVO vo) {
+		int res = mapper.profileEmailUpdate(vo);
+		return res;
+	}
 	@Override
 	public void insertNickname(String member_id, String nickname) {
 	    int profileId = mapper.getNextProfileId(member_id);
@@ -50,6 +56,8 @@ public class ProfileServiceImpl implements ProfileService {
 	    mapper.counterset2(member_id);
 		return res;
 	}
+
+	
 
 	
 

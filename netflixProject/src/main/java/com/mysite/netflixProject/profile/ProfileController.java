@@ -31,6 +31,12 @@ public class ProfileController {
         return profileDetail;
     }
     
+    @RequestMapping("/profileEmailUpdate")
+    public int profileEmailUpdate(@RequestBody ProfileVO vo) throws Exception{
+    	int res = profileService.profileEmailUpdate(vo);
+    	return res;
+    }
+    
 
     
     @RequestMapping("/insertprofiles")

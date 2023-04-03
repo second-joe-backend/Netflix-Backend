@@ -19,6 +19,9 @@ public interface ProfileMapper {
 	@Select("SELECT member_id, profile_id, nickname FROM profile WHERE member_id = #{member_id} and profile_id=#{profile_id}")
 	public ProfileVO getProfileDetail(ProfileVO vo);
 	
+	@Update("UPDATE profile set member_id=#{member_new_id} where member_id=#{member_id}")
+	public int profileEmailUpdate(ProfileVO vo);
+	
 	@Insert("INSERT INTO profile (member_id, profile_id, nickname) VALUES (#{member_id}, 1, #{nickname})")
     public int insertNickname(@Param("member_id") String member_id, @Param("profile_id") int profile_id, @Param("nickname") String nickname);
 	
