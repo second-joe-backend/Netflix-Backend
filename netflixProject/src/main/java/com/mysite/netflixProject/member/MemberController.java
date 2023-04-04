@@ -2,6 +2,8 @@ package com.mysite.netflixProject.member;
 
 import java.util.List;
 
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -87,10 +89,15 @@ public class MemberController {
 	}
 	
 	@RequestMapping("/updateMembers")
-	public int updateMembers(@RequestBody MemberVO vo) throws Exception{
-		int res = memberService.updateMembers(vo);
+	public ResponseEntity<Void> updateMembers(@RequestBody MemberVO vo) throws Exception{
+		int rowsAffected = memberService.updateMembers(vo);
+		
+		 if (rowsAffected > 0) {
+	            return new ResponseEntity<>(HttpStatus.OK);
+	        } else {
+	            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+	        }
 
-		return res;
 	}
 
 	
