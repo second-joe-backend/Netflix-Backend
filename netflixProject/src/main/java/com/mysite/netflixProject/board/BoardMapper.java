@@ -48,5 +48,8 @@ public interface BoardMapper {
 	@Update("update customercenter set board_reply=#{board_reply} where board_num = #{board_num}")
 	public int replyBoard(BoardVO board);
 	
-	
+	@Select("SELECT board_num, member_id, board_title, board_content, "
+			+ "date_format(board_date, '%m월 %d일 %H시') as board_date, board_reply FROM customercenter WHERE board_title LIKE CONCAT('%', #{search}, '%') OR board_content LIKE CONCAT('%', #{search}, '%') "
+			+ "order by board_num asc")
+	public List<BoardVO> searchBoard(@Param("search") String search);
 }

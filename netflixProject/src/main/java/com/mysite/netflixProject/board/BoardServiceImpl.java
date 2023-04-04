@@ -67,6 +67,12 @@ public class BoardServiceImpl implements BoardService{
 		return res;
 	}
 	
+	@Override
+	public List<BoardVO> searchBoard(String search){
+		List<BoardVO> vo = mapper.searchBoard(search);
+		  return vo;
+	}
+	
 	
 
 }

@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -63,6 +64,12 @@ public class BoardController {
 	public int replyBoard(@RequestBody BoardVO board) {
 		int res = impl.replyBoard(board);
 		return res;
+	}
+	
+	@RequestMapping("/search")
+	public List<BoardVO> searchBoard(String search){
+		List<BoardVO> vo = impl.searchBoard(search);
+		  return vo;
 	}
 
 }

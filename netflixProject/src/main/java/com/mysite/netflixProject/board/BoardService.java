@@ -11,4 +11,5 @@ public interface BoardService {
 	public int deleteBoard(BoardVO board);
 	public int replyBoard(BoardVO board);
 	public int deleteId(BoardVO board);
+	public List<BoardVO> searchBoard(String search);
 }
