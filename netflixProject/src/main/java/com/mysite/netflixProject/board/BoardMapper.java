@@ -4,6 +4,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
@@ -35,9 +36,17 @@ public interface BoardMapper {
 			+ " where board_num=#{board_num}")
 	public int modifyBoard(BoardVO board);
 	
+	@Update("update customercenter set member_id=#{new_member_id} where member_id=#{old_member_id}")
+	public int modifyID(Idchange change);
+	
 	@Delete("delete from customercenter where board_num=#{board_num}")
 	public int deleteBoard(BoardVO board);
 	
+	@Delete("delete from customercenter where member_id=#{member_id}")
+	public int deleteId(BoardVO board);
+	
 	@Update("update customercenter set board_reply=#{board_reply} where board_num = #{board_num}")
 	public int replyBoard(BoardVO board);
+	
+	
 }

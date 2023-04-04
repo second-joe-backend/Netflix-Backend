@@ -40,12 +40,25 @@ public class BoardController {
 		int res = impl.modifyBoard(board);
 		return res;
 	}
+	
+	@RequestMapping("/modifyid")
+	public int modifyID(@RequestBody Idchange change) {
+		int res = impl.modifyID(change);
+		return res;
+	}
 
 	@RequestMapping("/delete")
 	public int deleteBoard(BoardVO board) {
 		int res = impl.deleteBoard(board);
 		return res;
 	}
+	
+	@RequestMapping("/deletebyid")
+	public int deleteId(@RequestBody BoardVO board) {
+		int res = impl.deleteId(board);
+		return res;
+	}
+	
 	@RequestMapping("/reply")
 	public int replyBoard(@RequestBody BoardVO board) {
 		int res = impl.replyBoard(board);
