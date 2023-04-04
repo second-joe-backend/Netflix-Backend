@@ -39,6 +39,12 @@ public class BoardServiceImpl implements BoardService{
 		int res = mapper.modifyBoard(board);
 		return res;
 	}
+	
+	@Override
+	public int modifyID(Idchange change) {
+		int res = mapper.modifyID(change);
+		return res;
+	}
 
 	@Override
 	public int deleteBoard(BoardVO board) {
@@ -47,7 +53,27 @@ public class BoardServiceImpl implements BoardService{
 		mapper.counterset2();
 		return res;
 	}
+	
+	@Override
+	public int deleteId(BoardVO board) {
+		int res = mapper.deleteId(board);
+		return res;
+	}
 
+	
+	@Override
+	public int replyBoard(BoardVO board) {
+		int res = mapper.replyBoard(board);
+		return res;
+	}
+	
+	@Override
+	public List<BoardVO> searchBoard(String search){
+		List<BoardVO> vo = mapper.searchBoard(search);
+		  return vo;
+	}
+	
+	
 
 }
 

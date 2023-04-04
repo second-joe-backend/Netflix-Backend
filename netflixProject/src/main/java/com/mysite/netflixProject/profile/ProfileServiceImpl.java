@@ -14,20 +14,33 @@ public class ProfileServiceImpl implements ProfileService {
     }
 	
 	@Override
-	public List<ProfileVO> getNicknames(String member_id) {
-		List<ProfileVO> profilelist = mapper.getNicknames(member_id);
+	public List<ProfileVO> getNicknames(ProfileVO vo) {
+		List<ProfileVO> profilelist = mapper.getNicknames(vo);
 		return profilelist;
 	}
 	
 	@Override
+	public ProfileVO getProfileDetail(ProfileVO vo) {
+		ProfileVO profile = mapper.getProfileDetail(vo);
+		return profile;
+	}
+	
+	@Override
+	public int profileEmailUpdate(ProfileVO vo) {
+		int res = mapper.profileEmailUpdate(vo);
+		return res;
+	}
+	@Override
 	public void insertNickname(String member_id, String nickname) {
 	    int profileId = mapper.getNextProfileId(member_id);
-
-	    if (profileId <= 4) {
-	        mapper.insertNickname(member_id, profileId, nickname);
-	    } else {
+	    
+		
+	    if (profileId > 4) {   
 	        throw new IllegalStateException("최대 4개까지 등록가능");
 	    }
+	    mapper.insertNickname(member_id, 1, nickname);
+	    mapper.counterset();
+		mapper.counterset2(member_id);
 	}
 
 	@Override
@@ -39,8 +52,14 @@ public class ProfileServiceImpl implements ProfileService {
 	@Override
 	public int deleteNickname(String member_id, int profile_id) {
 	    int res = mapper.deleteNickname(member_id, profile_id);
+	    mapper.counterset();
+	    mapper.counterset2(member_id);
 		return res;
 	}
+
+	
+
+	
 
 
 }
