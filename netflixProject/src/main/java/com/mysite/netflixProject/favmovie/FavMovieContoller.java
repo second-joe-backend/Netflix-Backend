@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.mysite.netflixProject.board.BoardVO;
+import com.mysite.netflixProject.board.Idchange;
+
 
 @RestController
 @RequestMapping("/favmovie")
@@ -55,6 +58,12 @@ public class FavMovieContoller {
 	public int isDuplicateTitle(@RequestBody FavMovieVO favmovieVO) {
 		int res = favMovieService.isDuplicateTitle(favmovieVO);
 		
+		return res;
+	}
+	
+	@RequestMapping("/modifyid")
+	public int modifyID(@RequestBody Idchange change) {
+		int res = favMovieService.modifyID(change);
 		return res;
 	}
 
