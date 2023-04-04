@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.mysite.netflixProject.board.BoardVO;
+
 
 @RestController
 public class MemberController {
@@ -99,6 +101,13 @@ public class MemberController {
 	        }
 
 	}
+	
+	@RequestMapping("/memberSearch")
+	public List<MemberVO> searchMember(String search){
+		List<MemberVO> vo = memberService.searchMember(search);
+		  return vo;
+	}
+
 
 	
 }
