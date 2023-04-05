@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.mysite.netflixProject.board.BoardVO;
+
 @Service
 public class MemberServiceImpl implements MemberService {
 
@@ -76,6 +78,11 @@ public class MemberServiceImpl implements MemberService {
 	public int updateMembers(MemberVO member) {
 		int res = mapper.updateMembers(member);
 		return res; 
+	}
+	@Override
+	public List<MemberVO> searchMember(String search) {
+		List<MemberVO> vo = mapper.searchMember(search);
+		  return vo;
 	}
 	
 

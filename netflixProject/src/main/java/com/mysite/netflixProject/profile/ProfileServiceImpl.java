@@ -57,6 +57,12 @@ public class ProfileServiceImpl implements ProfileService {
 		return res;
 	}
 
+	@Override
+	public int deleteProfileMember(ProfileVO vo) {
+		int res = mapper.deleteProfileMember(vo);
+		return res;
+	}
+
 	
 
 	

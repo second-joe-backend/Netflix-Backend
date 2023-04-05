@@ -4,6 +4,8 @@ package com.mysite.netflixProject.favmovie;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.mysite.netflixProject.board.Idchange;
+
 
 
 public interface FavMovieService {
@@ -18,4 +20,6 @@ public interface FavMovieService {
 	public List<FavMovieVO> chkLike(FavMovieVO favmovieVO);
 	
 	public int isDuplicateTitle(FavMovieVO favmovieVO);
+	
+	public int modifyID(Idchange change);
 }

@@ -5,6 +5,8 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.mysite.netflixProject.board.Idchange;
+
 
 @Service("favMovieService")
 public class FavMovieServiceImpl implements FavMovieService {
@@ -45,6 +47,12 @@ public class FavMovieServiceImpl implements FavMovieService {
 	@Override
 	public int isDuplicateTitle(FavMovieVO favmovieVO) {
 		int res = mapper.isDuplicateTitle(favmovieVO);
+		return res;
+	}
+	
+	@Override
+	public int modifyID(Idchange change) {
+		int res = mapper.modifyID(change);
 		return res;
 	}
 

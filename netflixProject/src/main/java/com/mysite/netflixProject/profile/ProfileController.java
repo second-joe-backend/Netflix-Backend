@@ -67,5 +67,11 @@ public class ProfileController {
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
+    
+    @RequestMapping("/deleteProfileMember")
+    public int deleteProfileMember(@RequestBody ProfileVO vo) {
+    	int res = profileService.deleteProfileMember(vo);
+    	return res;
+    }
 
 }

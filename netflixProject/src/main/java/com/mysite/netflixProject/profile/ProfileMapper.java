@@ -42,4 +42,7 @@ public interface ProfileMapper {
 			+ " where member_id=#{member_id}"
 			+ " order by profile_date asc;")
 	public void counterset2(@Param("member_id")String member_id);
+	
+	@Delete("DELETE FROM profile where member_id=#{member_id}")
+	public int deleteProfileMember(ProfileVO vo);
 }

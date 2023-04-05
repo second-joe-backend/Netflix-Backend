@@ -8,6 +8,9 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
+
+import com.mysite.netflixProject.board.Idchange;
 
 
 
@@ -31,5 +34,8 @@ public interface FavMovieMapper {
 	
 	@Select("select count(*) from fav_movie where member_id=#{member_id} and movie_title=#{movie_title}")
 	public int isDuplicateTitle(FavMovieVO favmovieVO);
+	
+	@Update("update fav_movie set member_id=#{new_member_id} where member_id=#{old_member_id}")
+	public int modifyID(Idchange change);
 
 }
